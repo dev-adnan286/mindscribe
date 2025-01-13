@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(148 163 184 / 0.5) transparent;
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900;
+  }
+  .prose-note {
+    @apply text-[15px] leading-7 text-slate-800 dark:text-slate-200;
+  }
+  .prose-note h1 { @apply mb-3 mt-6 text-2xl font-bold; }
+  .prose-note h2 { @apply mb-2 mt-5 text-xl font-semibold; }
+  .prose-note h3 { @apply mb-2 mt-4 text-lg font-semibold; }
+  .prose-note p { @apply my-3; }
+  .prose-note ul { @apply my-3 list-disc space-y-1 pl-6; }
+  .prose-note ol { @apply my-3 list-decimal space-y-1 pl-6; }
+  .prose-note blockquote { @apply my-3 border-l-4 border-brand-300 pl-4 italic text-slate-600 dark:border-brand-700 dark:text-slate-400; }
+  .prose-note code { @apply rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[13px] dark:bg-slate-800; }
+  .prose-note pre { @apply my-3 overflow-x-auto rounded-lg bg-slate-900 p-4 text-[13px] text-slate-100 dark:bg-black; }
+  .prose-note pre code { @apply bg-transparent p-0; }
+  .prose-note a { @apply text-brand-600 underline dark:text-brand-400; }
+  .prose-note table { @apply my-3 w-full border-collapse text-sm; }
+  .prose-note th, .prose-note td { @apply border border-slate-200 px-2 py-1 dark:border-slate-700; }
+  .prose-note hr { @apply my-6 border-slate-200 dark:border-slate-800; }
+}
